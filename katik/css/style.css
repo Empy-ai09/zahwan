@@ -1,0 +1,122 @@
+/*google font (import) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: rgb(190, 252, 252);
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 17px;
+  box-shadow: 0 0 19px rgb(14, 233, 134);
+  width: 350px;
+  max-height: 80vh; /* buat Membatasi tinggi maksimum dari tinggi viewport */
+  overflow-y: auto; /* biar bisa di scroll*/
+}
+
+/*di bantu oleh AI*/
+.judul {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;  
+  color: #00bbff;
+  text-align: center;
+  padding: 1rem; /* Memberikan ruang di dalam kotak */
+  border: 2px solid #00bbff; /* Menambahkan garis tepi */
+  border-radius: 10px; /* Membuat sudut kotak melengkung */
+  display: block; /* Membuat kotak memenuhi lebar elemen induk */
+  width: 100%; /* Memastikan kotak memenuhi lebar elemen induk */
+  background-color: #f0f8ff; /* Warna latar belakang kotak */
+  margin-bottom: 1rem; /* Memberikan jarak ke elemen di bawahnya */
+  box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar kotak */
+}
+
+.subjudul{
+  color: #90e0fd;
+  text-align: center
+  ;
+}
+
+.shape-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.shape-selector button {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #00bbff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #00bbff;
+  border: none;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+button:hover {
+  background-color: rgb(14, 233, 134);
+}
+
+.result {
+  padding: 1rem;
+  background-color: #c2f5ff;
+  border-radius: 5px;
+  color: rgb(240, 8, 240);
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.deskripsi {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+}
+
+.waternark {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}

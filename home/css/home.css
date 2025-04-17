@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-image {
+  width: 120px; /* Ukuran foto profil */
+  height: 120px; /* Ukuran foto profil */
+  background-image: url('aset/foto-profile.png'); /* Pastikan path gambar benar */
+  background-color: #e0e0e0; /* Warna fallback */
+  background-size: cover; /* Pastikan gambar memenuhi elemen */
+  background-position: center; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Jangan ulangi gambar */
+  border-radius: 50%; /* Membuat foto berbentuk bulat */
+  margin: 0 auto; /* Memusatkan elemen secara horizontal */
+  border: 3px solid #2d3436; /* Tambahkan border */
+  display: block; /* Pastikan elemen menjadi blok untuk margin auto */
+}
+
+
+.welcome {
+  color: #2d3436;
+  margin-bottom: 15px;
+  font-size: 2em;
+}
+
+.description {
+  color: #636e72;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
+.follow-heading {
+  color: #2d3436;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Pastikan ikon sejajar secara vertikal */
+  gap: 20px; /* Jarak antar ikon */
+}
+
+.social-links img.threads-logo {
+  width: 24px; /* Samakan ukuran dengan ikon Instagram */
+  height: 24px;
+  display: inline-block; /* Pastikan logo Threads diperlakukan seperti ikon */
+  vertical-align: middle; /* Selaraskan secara vertikal */
+}
+
+.social-icon {
+  font-size: 24px; /* Ukuran ikon Instagram */
+  color: #2d3436;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block; /* Pastikan ikon Instagram diperlakukan seperti logo */
+  vertical-align: middle; /* Selaraskan secara vertikal */
+}
+
+.social-icon:hover,
+.social-links img.threads-logo:hover {
+  transform: translateY(-3px); /* Efek hover untuk kedua elemen */
+}
+
+.fa-instagram {
+  color: #E1306C; /* Warna ikon Instagram */
+}
+
+.social-links img.github-logo {
+  width: 24px; /* Samakan ukuran dengan ikon Instagram */
+  height: 24px; /* Samakan ukuran dengan ikon Instagram */
+  display: inline-block; /* Perlakukan seperti ikon */
+  vertical-align: middle; /* Selaraskan secara vertikal */
+  object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background-color: #2d3436;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.navbar:hover {
+  width: 200px; /* Lebar navbar saat di-hover */
+}
+
+.menu-icon {
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+}
+
+.menu li {
+  margin: 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hidden {
+  display: none; /* Sembunyikan elemen */
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  opacity: 0; /* Awalnya transparan */
+  transform: translateX(-20px); /* Geser sedikit ke kiri */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animasi */
+}
+
+.menu.show {
+  display: block; /* Tampilkan elemen */
+  opacity: 1; /* Buat elemen terlihat */
+  transform: translateX(0); /* Geser ke posisi semula */
+}
+
+.menu li {
+  margin: 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+  transform: translateX(10px); /* Animasi saat di-hover */
+  color: #00cec9; /* Warna saat di-hover */
+}

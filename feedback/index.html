@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<style>
+body { margin: 0; }
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+.sidebar ul { list-style-type: none; padding: 0; margin: 0; }
+.sidebar ul li a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar ul li a:hover { color: #f1f1f1; }
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  color: #111;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+body { margin: 0; }
+.sidebar { height:100%; width:0; position:fixed; top:0; left:0; background:#111; overflow-x:hidden; transition:0.3s; padding-top:60px; z-index:1000; }
+.sidebar ul { list-style:none; padding:0; margin:0; }
+.sidebar ul li a { display:block; padding:8px 32px; color:#818181; text-decoration:none; font-size:20px; transition:0.3s; }
+.sidebar ul li a:hover { color:#f1f1f1; }
+.hamburger { font-size:30px; cursor:pointer; position:fixed; top:15px; left:15px; z-index:1001; color:#111; }
+.logout-btn { position:fixed; bottom:20px; left:20px; padding:8px 12px; background:red; color:white; border:none; border-radius:5px; }
+</style>
+</head>
+<body>
+
+<div id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="../home/index.html">Home</a></li>
+    <li><a href="../katik/index.html">Katik</a></li>
+    <li><a href="../feedback/index.html">Feedback</a></li>
+  </ul>
+</div>
+<div id="hamburger" class="hamburger">&#9776;</div>
+<h2 id="greeting"></h2>
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<div id="sidebar" class="sidebar"><ul>
+    <li><a href="../home/home.html">Home</a></li>
+    <li><a href="../katik/index.html">Katik</a></li>
+    <li><a href="index.html">Feedback</a></li>
+</ul></div>
+<div class="hamburger" id="hamburger">&#9776;</div>
+
+    <div class="container">
+        <h1>Berikan Feedback Anda</h1>
+        <p>Kami sangat menghargai saran dan keritik anda! Silakan berikan penilaian dan komentar Anda untuk membantu kami meningkatkan layanan kami.</p>
+        
+        <div class="rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        
+        <textarea id="comment" placeholder="Tulis komentar Anda di sini..."></textarea>
+        <button id="submitBtn">Kirim!</button>
+    </div>
+
+    <script src="script.js"></script>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  var sidebar = document.getElementById('sidebar');
+  if (sidebar.style.width === '250px') {
+    sidebar.style.width = '0';
+  } else {
+    sidebar.style.width = '250px';
+  }
+});
+</script>
+
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function(){
+    var sb = document.getElementById('sidebar');
+    sb.style.width = sb.style.width==="250px"?"0":"250px";
+});
+var nama = localStorage.getItem("userNama");
+if (!nama) { window.location.href="../login/login.html"; }
+else { document.getElementById("greeting").textContent = "Halo, "+nama+"!"; }
+function logout(){ localStorage.removeItem("userNama"); window.location.href="../login/login.html"; }
+</script>
+
+</body>
+</html>

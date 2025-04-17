@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<style>
+body { margin: 0; }
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+.sidebar ul { list-style-type: none; padding: 0; margin: 0; }
+.sidebar ul li a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar ul li a:hover { color: #f1f1f1; }
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  color: #111;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda</title>
+    <!-- Path ke CSS di folder css/ -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+body { margin: 0; }
+.sidebar { height:100%; width:0; position:fixed; top:0; left:0; background:#111; overflow-x:hidden; transition:0.3s; padding-top:60px; z-index:1000; }
+.sidebar ul { list-style:none; padding:0; margin:0; }
+.sidebar ul li a { display:block; padding:8px 32px; color:#818181; text-decoration:none; font-size:20px; transition:0.3s; }
+.sidebar ul li a:hover { color:#f1f1f1; }
+.hamburger { font-size:30px; cursor:pointer; position:fixed; top:15px; left:15px; z-index:1001; color:#111; }
+.logout-btn { position:fixed; bottom:20px; left:20px; padding:8px 12px; background:red; color:white; border:none; border-radius:5px; }
+</style>
+</head>
+<body>
+
+<div id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="../home/index.html">Home</a></li>
+    <li><a href="../katik/index.html">Katik</a></li>
+    <li><a href="../feedback/index.html">Feedback</a></li>
+  </ul>
+</div>
+<div id="hamburger" class="hamburger">&#9776;</div>
+<h2 id="greeting"></h2>
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<div id="sidebar" class="sidebar"><ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="../katik/index.html">Katik</a></li>
+    <li><a href="../feedback/index.html">Feedback</a></li>
+</ul></div>
+<div class="hamburger" id="hamburger">&#9776;</div>
+
+    <div class="container">
+        <div class="aset/foto-profile.png"></div> <!-- Foto profil -->
+        <h1 class="welcome">Welcome</h1>
+        <p class="description">
+            Selamat datang di beranda! Saya adalah seorang anak SMK yang sedang belajar hal baru!
+        </p>
+        <h2 class="follow-heading">Follow Us</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/_z4hwn/profilecard/?igsh=c3dieTlxaTNscDRh" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/Empy-ai09" target="_blank" class="social-icon">
+                <img src="aset/logo-github.jpg" alt="GitHub Logo" class="github-logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- Path ke script.js di folder javascript/ -->
+    <script src="javascript/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Ambil query string dari URL
+        const params = new URLSearchParams(window.location.search);
+        const nama = params.get("nama");
+    
+        // Kalau ada nama, tampilkan di elemen welcome
+        if (nama) {
+            document.querySelector(".welcome").textContent = `Welcome, ${nama}!`;
+        }
+    </script>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  var sidebar = document.getElementById('sidebar');
+  if (sidebar.style.width === '250px') {
+    sidebar.style.width = '0';
+  } else {
+    sidebar.style.width = '250px';
+  }
+});
+</script>
+
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function(){
+    var sb = document.getElementById('sidebar');
+    sb.style.width = sb.style.width==="250px"?"0":"250px";
+});
+var nama = localStorage.getItem("userNama");
+if (!nama) { window.location.href="../login/login.html"; }
+else { document.getElementById("greeting").textContent = "Halo, "+nama+"!"; }
+function logout(){ localStorage.removeItem("userNama"); window.location.href="../login/login.html"; }
+</script>
+
+</body>
+</html>

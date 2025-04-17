@@ -1,0 +1,58 @@
+.login {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Gambar berada di lapisan bawah */
+}
+
+.login-box {
+    position: relative;
+    z-index: 2; /* Form login berada di lapisan atas */
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang semi-transparan */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Pastikan form tidak terlalu lebar di layar kecil */
+    max-width: 300px; /* Batas maksimum lebar form */
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%; /* Pastikan input memenuhi lebar form */
+    padding: 12px; /* Tambahkan padding untuk kenyamanan */
+    margin-bottom: 15px; /* Tambahkan jarak antara input dan tombol */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Pastikan padding dihitung dalam lebar total */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

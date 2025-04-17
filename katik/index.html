@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+body { margin: 0; }
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+.sidebar ul { list-style-type: none; padding: 0; margin: 0; }
+.sidebar ul li a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar ul li a:hover { color: #f1f1f1; }
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  color: #111;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATIK~by_zahwan</title>
+    <!--css eksternal-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--favicon-->
+    <link rel="icon" href="aset/icon.png">
+
+<style>
+body { margin: 0; }
+.sidebar { height:100%; width:0; position:fixed; top:0; left:0; background:#111; overflow-x:hidden; transition:0.3s; padding-top:60px; z-index:1000; }
+.sidebar ul { list-style:none; padding:0; margin:0; }
+.sidebar ul li a { display:block; padding:8px 32px; color:#818181; text-decoration:none; font-size:20px; transition:0.3s; }
+.sidebar ul li a:hover { color:#f1f1f1; }
+.hamburger { font-size:30px; cursor:pointer; position:fixed; top:15px; left:15px; z-index:1001; color:#111; }
+.logout-btn { position:fixed; bottom:20px; left:20px; padding:8px 12px; background:red; color:white; border:none; border-radius:5px; }
+</style>
+</head>
+
+<body>
+
+<div id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="../home/index.html">Home</a></li>
+    <li><a href="../katik/index.html">Katik</a></li>
+    <li><a href="../feedback/index.html">Feedback</a></li>
+  </ul>
+</div>
+<div id="hamburger" class="hamburger">&#9776;</div>
+<h2 id="greeting"></h2>
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<div id="sidebar" class="sidebar"><ul>
+    <li><a href="../home/index.html">Home</a></li>
+    <li><a href="index.html">Katik</a></li>
+    <li><a href="../feedback/index.html">Feedback</a></li>
+</ul></div>
+<div class="hamburger" id="hamburger">&#9776;</div>
+
+    <div class="container">
+        <h1 class="judul"><u>"KATIK"</u></h1>
+        <h1 class="subjudul">kalkulator matematik</h1>
+        
+        <div class="shape-selector">
+            <button onclick="showSquare()">Persegi</button>
+            <button onclick="showRectangle()">Persegi Panjang</button>
+        </div>
+
+        <!-- Kalkulator Persegi -->
+        <div id="square-calc" class="hidden">
+            <div class="calculator">
+                <img src="aset/persegi.jpeg" alt="persegi">
+                <input type="number" id="sisi" placeholder="Masukkan sisi">
+                <div class="button-group">
+                    <button onclick="hitungLuasPersegi()">Hitung Luas</button>
+                    <button onclick="hitungKelilingPersegi()">Hitung Keliling</button>
+                </div>
+                <div id="hasil-persegi" class="result"></div>
+            </div>
+        </div>
+
+        <!-- Kalkulator Persegi Panjang -->
+        <div id="rectangle-calc" class="hidden">
+            <div class="calculator">
+                <img src="aset/persegi.panjang.jpg" alt="persegi panjang">
+                <input type="number" id="panjang" placeholder="Masukkan panjang">
+                <input type="number" id="lebar" placeholder="Masukkan lebar">
+                <div class="button-group">
+                    <button onclick="hitungLuasPersegiPanjang()">Hitung Luas</button>
+                    <button onclick="hitungKelilingPersegiPanjang()">Hitung Keliling</button>
+                </div>
+                <div id="hasil-persegipanjang" class="result"></div>
+            </div>
+        </div>
+        <p class="deskripsi"><u>"katik"</u> adalah kalkulator sederhana yang begitu powerfull.<br>
+        dan dapat di gunakan di mana saja!</p>
+    </div>
+    <script src="js/script.js"></script>
+
+   
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  var sidebar = document.getElementById('sidebar');
+  if (sidebar.style.width === '250px') {
+    sidebar.style.width = '0';
+  } else {
+    sidebar.style.width = '250px';
+  }
+});
+</script>
+
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function(){
+    var sb = document.getElementById('sidebar');
+    sb.style.width = sb.style.width==="250px"?"0":"250px";
+});
+var nama = localStorage.getItem("userNama");
+if (!nama) { window.location.href="../login/login.html"; }
+else { document.getElementById("greeting").textContent = "Halo, "+nama+"!"; }
+function logout(){ localStorage.removeItem("userNama"); window.location.href="../login/login.html"; }
+</script>
+
+</body>
+</html>
