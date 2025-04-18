@@ -105,28 +105,31 @@ body { margin: 0; }
         }
     </script>
 
+
 <script>
-document.getElementById('hamburger').addEventListener('click', function() {
-  var sidebar = document.getElementById('sidebar');
-  if (sidebar.style.width === '250px') {
-    sidebar.style.width = '0';
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+
+  if (hamburger && sidebar) {
+    hamburger.addEventListener('click', function () {
+      sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+    });
+  }
+
+  const nama = localStorage.getItem("userNama");
+  if (!nama) {
+    window.location.href = "../login/login.html";
   } else {
-    sidebar.style.width = '250px';
+    const greet = document.getElementById("greeting");
+    if (greet) greet.textContent = "Halo, " + nama + "!";
   }
 });
+
+function logout() {
+  localStorage.removeItem("userNama");
+  window.location.href = "../login/login.html";
+}
 </script>
-
-
-<script>
-document.getElementById('hamburger').addEventListener('click', function(){
-    var sb = document.getElementById('sidebar');
-    sb.style.width = sb.style.width==="250px"?"0":"250px";
-});
-var nama = localStorage.getItem("userNama");
-if (!nama) { window.location.href="../login/login.html"; }
-else { document.getElementById("greeting").textContent = "Halo, "+nama+"!"; }
-function logout(){ localStorage.removeItem("userNama"); window.location.href="../login/login.html"; }
-</script>
-
 </body>
 </html>
